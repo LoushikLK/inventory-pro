@@ -1,10 +1,14 @@
+import { DashboardGraph, DashboardStat } from "components/dashboard";
 import { CommonLayout } from "layouts";
 import { NextPage } from "next";
 
 const Dashboard: NextPage = () => {
   return (
     <CommonLayout title="Dashboard">
-      <div>dashboard</div>
+      <section className="w-full custom-container ">
+        <DashboardStat />
+        <DashboardGraph />
+      </section>
     </CommonLayout>
   );
 };

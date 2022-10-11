@@ -1,8 +1,10 @@
 import {
   Add,
   AddBusiness,
+  Badge,
   DashboardOutlined,
   DashboardRounded,
+  DesignServices,
   Inventory,
   Inventory2Outlined,
   Inventory2Rounded,
@@ -300,11 +302,26 @@ const useMenuItems = (): {
       },
       {
         key: "5i",
-        title: "Create Requirement",
+        title: "Tender Management",
         icon: <UnarchiveOutlined />,
-        route: "/create-product-requirement",
+
         activeIcon: <UnarchiveRounded />,
+        submenus: [
+          {
+            key: "5idd",
+            title: "Create Tender",
+            icon: <DesignServices />,
+            route: "/tender/create",
+          },
+          {
+            key: "5idddde",
+            title: "Manage Tender",
+            icon: <Badge />,
+            route: "/tender/manage",
+          },
+        ],
       },
+
       {
         key: "4zz",
         title: "Vender Management",
