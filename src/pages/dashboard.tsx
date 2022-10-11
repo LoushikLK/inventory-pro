@@ -1,11 +1,11 @@
-import { HOLayout } from "layouts";
+import { CommonLayout } from "layouts";
 import { NextPage } from "next";
 
 const Dashboard: NextPage = () => {
   return (
-    <HOLayout title="Dashboard">
+    <CommonLayout title="Dashboard">
       <div>dashboard</div>
-    </HOLayout>
+    </CommonLayout>
   );
 };
 

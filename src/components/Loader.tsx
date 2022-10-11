@@ -17,9 +17,9 @@ const Loader = ({ visible }: Props) => {
       }`}
     >
       <div className="relative h-48 w-48">
-        <div className="rotate-animation h-48 w-48 rounded-full border-x-2 border-t-2 border-x-theme border-t-theme" />
+        <div className="animate-spin h-48 w-48 rounded-full border-x-2 border-t-2 border-x-theme border-t-theme" />
         <img
-          alt=""
+          alt="Loading..."
           src={LOADER.src}
           className="absolute left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2 animate-pulse"
         />

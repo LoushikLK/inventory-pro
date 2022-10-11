@@ -87,8 +87,24 @@ const Drawer = ({ open, onToggle }: DrawerType) => {
                       ? selectedSubMenu === item?.key
                       : router?.pathname === item.route
                   }
+                  className={
+                    router.asPath === item.route
+                      ? "!rounded-r-[25px] !bg-theme !text-white"
+                      : ""
+                  }
                 >
-                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  {item?.route === router?.asPath ||
+                  selectedSubMenu === router?.asPath ? (
+                    <ListItemIcon
+                      className={
+                        router.asPath === item.route ? " !text-white" : ""
+                      }
+                    >
+                      {item.activeIcon}
+                    </ListItemIcon>
+                  ) : (
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                  )}
                   <ListItemText primary={item.title} />
                   {item?.submenus &&
                     (selectedSubMenu === item?.key ? (
@@ -111,8 +127,21 @@ const Drawer = ({ open, onToggle }: DrawerType) => {
                         sx={{ pl: 4 }}
                         selected={router.pathname === submenu.route}
                         key={submenu?.key}
+                        className={
+                          router.asPath === submenu.route
+                            ? "!rounded-r-[25px] !bg-theme !text-white"
+                            : ""
+                        }
                       >
-                        <ListItemIcon>{submenu?.icon}</ListItemIcon>
+                        <ListItemIcon
+                          className={
+                            router.asPath === submenu.route
+                              ? " !text-white"
+                              : ""
+                          }
+                        >
+                          {submenu?.icon}
+                        </ListItemIcon>
 
                         <ListItemText
                           primary={submenu?.title}
@@ -144,10 +173,8 @@ const Drawer = ({ open, onToggle }: DrawerType) => {
           </Box>
         </List>
         <Box hidden={!open} sx={{ textAlign: "center" }}>
-          <Typography>
-            {"Hi"} {user?.displayName},
-          </Typography>
-          <Typography variant="caption">{"Click here to logout"}</Typography>
+          <Typography>Hi {user?.displayName},</Typography>
+          <Typography variant="caption">Click here to logout</Typography>
           <div className="py-5">
             <Button
               variant="contained"
