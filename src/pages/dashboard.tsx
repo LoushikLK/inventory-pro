@@ -1,4 +1,8 @@
-import { DashboardGraph, DashboardStat } from "components/dashboard";
+import {
+  DashboardGraph,
+  DashboardStat,
+  RecentExportTable,
+} from "components/dashboard";
 import { CommonLayout } from "layouts";
 import { NextPage } from "next";
 
@@ -8,6 +12,7 @@ const Dashboard: NextPage = () => {
       <section className="w-full custom-container ">
         <DashboardStat />
         <DashboardGraph />
+        <RecentExportTable />
       </section>
     </CommonLayout>
   );
