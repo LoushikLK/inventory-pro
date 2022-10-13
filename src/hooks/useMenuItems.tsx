@@ -31,7 +31,7 @@ const useMenuItems = (): {
   }[];
   route?: string;
 }[] => {
-  let role = "HO";
+  let role = "ZO";
 
   switch (role) {
     case "VENDER":

@@ -3,9 +3,10 @@ import { Avatar } from "@mui/material";
 import { ManagePanel } from "components/tender";
 import dayjs from "dayjs";
 import { HOLayout } from "layouts";
+import { NextPage } from "next";
 import { muiTable } from "utils";
 
-const TenderManagement = () => {
+const TenderManagement: NextPage = () => {
   const allTenders = [
     {
       slNo: "1",
