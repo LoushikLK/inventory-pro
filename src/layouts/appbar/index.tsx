@@ -11,8 +11,8 @@ export default function AppBar({ title = "Welcome Back!" }: Props) {
   const notifications = [];
 
   return (
-    <div>
-      <header className="h-16 bg-white shadow-lg border-b">
+    <div className="sticky top-0  z-[1000] bg-white ">
+      <header className="h-16  shadow-lg border-b">
         <div className="flex h-16 items-center justify-between px-4  ">
           <h1 className="hidden text-xl lg:block">{title}</h1>
           <div className="flex items-center gap-6">

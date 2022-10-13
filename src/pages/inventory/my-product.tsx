@@ -1,14 +1,14 @@
 import MaterialTable from "@material-table/core";
 import { Avatar } from "@mui/material";
+import { ChangeStatus } from "components/inventory";
 import dayjs from "dayjs";
 import { CommonLayout } from "layouts";
 import { NextPage } from "next";
-import { useRouter } from "next/router";
+import { useState } from "react";
 import { muiTable } from "utils";
 
-const List: NextPage = () => {
-  const router = useRouter();
-
+const MyProduct: NextPage = () => {
+  const [changeStatus, setChangeStatus] = useState(false);
   const productDetails = [
     {
       slNo: "1",
@@ -22,11 +22,6 @@ const List: NextPage = () => {
       price: 150000,
       status: "repairing",
       daysLeftRepairing: dayjs().set("month", 12),
-      user: {
-        name: "John Smith",
-        role: "DO",
-        email: "john.smith@gmail.com",
-      },
     },
     {
       slNo: "2",
@@ -40,11 +35,6 @@ const List: NextPage = () => {
       price: 150000,
       status: "available",
       daysLeftRepairing: null,
-      user: {
-        name: "robert dowhny jr",
-        role: "Vender",
-        email: "rdj@gmail.com",
-      },
     },
   ];
 
@@ -66,9 +56,14 @@ const List: NextPage = () => {
   return (
     <CommonLayout title="Inventory | List" appBarTitle="Product Inventory">
       <section className="w-full py-8 custom-container ">
+        <ChangeStatus
+          open={changeStatus}
+          closeFn={() => setChangeStatus(false)}
+          id=""
+        />
         <MaterialTable
           isLoading={false}
-          title="All Products"
+          title="My Products"
           localization={{
             pagination: {
               labelDisplayedRows: "{from}-{to} of {count}",
@@ -180,29 +175,17 @@ const List: NextPage = () => {
               ),
             },
             {
-              title: "User",
-              tooltip: "user",
-              render: (rowData) => (
-                <div className="flex flex-col">
-                  <h3 className="font-medium tracking-wide">
-                    {rowData?.user?.name}
-                  </h3>
-                  <small className="text-gray-500">
-                    {rowData?.user?.email}
-                  </small>
-                </div>
-              ),
-            },
-            {
               title: "Action",
               tooltip: "Action",
               render: (rowData) => (
-                <button
-                  className="btn-primary whitespace-nowrap "
-                  onClick={() => router?.push("/tender/create")}
-                >
-                  Create Tender Request
-                </button>
+                <div className="flex items-center justify-center">
+                  <button
+                    className="btn-primary whitespace-nowrap"
+                    onClick={() => setChangeStatus(true)}
+                  >
+                    Change Status
+                  </button>
+                </div>
               ),
             },
           ]}
@@ -222,4 +205,4 @@ const List: NextPage = () => {
   );
 };
 
-export default List;
+export default MyProduct;
