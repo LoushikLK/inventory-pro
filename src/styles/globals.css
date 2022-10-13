@@ -43,4 +43,19 @@ body {
   .btn-primary:hover {
     background-position: 100%;
   }
+  .btn-secondary {
+    @apply relative px-4 py-2 rounded-md shadow text-white;
+    background-image: linear-gradient(
+      to right,
+      #a73737 0%,
+      #7a2828 51%,
+      #a73737 100%
+    );
+    background-size: 200% auto;
+    box-shadow: none;
+    transition: all 0.4s ease;
+  }
+  .btn-secondary:hover {
+    background-position: 100%;
+  }
 }

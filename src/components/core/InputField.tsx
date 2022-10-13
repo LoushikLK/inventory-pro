@@ -105,7 +105,6 @@ const InputField = ({
       return (
         <div>
           <p className="text-theme text-wider font-medium pb-2">{title}</p>
-
           <TextField
             fullWidth={fullWidth}
             type="date"
@@ -126,7 +125,7 @@ const InputField = ({
       );
     case "file":
       return (
-        <div className="">
+        <div className={styleField}>
           <p className="text-theme text-wider font-medium pb-2">{title}</p>
           <div className={styleField}>
             <UploadImage
@@ -140,7 +139,7 @@ const InputField = ({
 
     case "select":
       return (
-        <div>
+        <div className={styleArea}>
           <p className="text-theme text-wider font-medium pb-2">{title}</p>
 
           <TextField
