@@ -8,8 +8,8 @@ const venderSchema = [
     initialValue: "",
     type: "text",
     validationSchema: Yup.string()
-      .required("Vender Name is required.")
-      .min(3, "Vender name must be at least 3 characters long."),
+      .required("Name is required.")
+      .min(3, "Name must be at least 3 characters long."),
     multiline: false,
   },
   {
@@ -88,16 +88,14 @@ const venderSchema = [
       .required("Please Enter Your Post")
       .min(5, "Post must be at least 5 characters long"),
   },
-  // {
-  //   key: "8",
-  //   name: "photoUrl",
-  //   label: "Vender Image",
-  //   initialValue: "",
-  //   type: "file",
-  //   validationSchema: Yup.string()
-  //     .required("Product image is required")
-  //     .nullable(),
-  //   // multiline: true,
-  // },
+  {
+    key: "8",
+    name: "photoUrl",
+    label: "User Image",
+    initialValue: "",
+    type: "file",
+    validationSchema: Yup.string().required("Image is required").nullable(),
+    // multiline: true,
+  },
 ];
 export default venderSchema;

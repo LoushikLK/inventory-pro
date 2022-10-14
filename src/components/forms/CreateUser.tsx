@@ -55,6 +55,7 @@ const CreateUser = () => {
                 (formik?.errors[items?.name] as any)
               }
               styleArea="col-span-12 md:col-span-6 !w-full"
+              styleField="w-full col-span-12 md:col-span-6"
               image={
                 formik?.values?.photoUrl &&
                 typeof formik?.values?.photoUrl !== "string"

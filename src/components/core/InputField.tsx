@@ -151,6 +151,8 @@ const InputField = ({
             onChange={onChange}
             className={styleContact}
             InputProps={InputProps}
+            error={error}
+            helperText={helperText}
           >
             {options?.map((option: any) => (
               <MenuItem key={option?.value} value={option?.value}>
